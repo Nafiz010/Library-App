@@ -1,0 +1,57 @@
+﻿CREATE TABLE [dbo].[User]
+(
+	[Id] INT NOT NULL PRIMARY KEY, 
+    [Name] VARCHAR(50) NULL, 
+    [email] VARCHAR(50) NULL, 
+    [password] VARCHAR(50) NULL, 
+    [DOB] DATE NULL
+)
+
+CREATE TABLE [dbo].[Books]
+(
+	[Id] INT NOT NULL PRIMARY KEY, 
+    [Name] VARCHAR(50) NULL, 
+    [Publisher Name] VARCHAR(50) NULL, 
+    [Release Date] DATE NULL
+)
+
+CREATE TABLE [dbo].[Role]
+(
+	[Id] INT NOT NULL PRIMARY KEY, 
+    [UserType] VARCHAR(50) NULL
+)
+
+CREATE TABLE [dbo].[UserRole]
+(
+	[Id] INT NOT NULL PRIMARY KEY, 
+    [userId] INT NOT NULL, 
+    [roleId] INT NOT NULL, 
+    CONSTRAINT [FK_user] FOREIGN KEY ([userId]) REFERENCES [User]([Id]), 
+    CONSTRAINT [FK_role] FOREIGN KEY ([roleId]) REFERENCES [Role]([Id]) 
+)
+
+CREATE TABLE [dbo].[Burrows]
+(
+	[Id] INT NOT NULL PRIMARY KEY, 
+    [userId] INT NOT NULL, 
+    [bookId] INT NOT NULL, 
+    [Lend_Date] DATE NULL, 
+    [Return_Date] DATE NULL, 
+    CONSTRAINT [FK_User_Id] FOREIGN KEY ([userId]) REFERENCES [User]([Id]), 
+    CONSTRAINT [FK_Book] FOREIGN KEY ([bookId]) REFERENCES [Books]([Id])
+)
+
+CREATE TABLE [dbo].[Category]
+(
+	[Id] INT NOT NULL PRIMARY KEY, 
+    [Book_Genre] VARCHAR(50) NULL
+)
+
+CREATE TABLE [dbo].[BookCategory]
+(
+	[Id] INT NOT NULL PRIMARY KEY, 
+    [bookId] INT NOT NULL, 
+    [categoryId] INT NOT NULL, 
+    CONSTRAINT [FK_Book_Id] FOREIGN KEY ([bookId]) REFERENCES [Books]([Id]), 
+    CONSTRAINT [FK_Category_Id] FOREIGN KEY ([categoryId]) REFERENCES [Category]([Id])
+)

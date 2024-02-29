@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f29f0d4d5e3842f3aa8086b0c1661e22" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="DatabaseLibModel.Book" Width="1.5" PointX="3" PointY="5.125" />
+        <EntityTypeShape EntityType="DatabaseLibModel.Burrow" Width="1.5" PointX="5.25" PointY="1" />
+        <EntityTypeShape EntityType="DatabaseLibModel.Category" Width="1.5" PointX="3" PointY="8.375" />
+        <EntityTypeShape EntityType="DatabaseLibModel.Role" Width="1.5" PointX="0.75" PointY="1.375" />
+        <EntityTypeShape EntityType="DatabaseLibModel.User" Width="1.5" PointX="3" PointY="1" />
+        <AssociationConnector Association="DatabaseLibModel.FK_Book" />
+        <AssociationConnector Association="DatabaseLibModel.FK_User_Id" />
+        <AssociationConnector Association="DatabaseLibModel.FK_User_ToTable" />
+        <AssociationConnector Association="DatabaseLibModel.FK_Books_ToTable" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
